@@ -1,0 +1,50 @@
+site_name: Infrastructure as Code
+
+theme:
+  name: material
+  logo: images/programmers_logo.png
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para modo escuro
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/weather-night 
+        name: Mudar para modo claro
+
+  features:
+    - content.code.select
+    - content.tabs.link
+    - content.code.copy
+
+markdown_extensions: 
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+
+nav:
+  - O que é IaC: index.md
+  - Ansible: ferramentas/ansible.md
+  - Terraform: ferramentas/terraform.md
+  - OpenTofu: ferramentas/opentofu.md
+  
+
+  # - Env para a doc: documentacao_env/documentacao_env.md
+  # - Segurança: seguranca/chaves_ssh.md
+  #   - Acesso SSh - Gerando par de chaves: seguranca/chaves_ssh.md
+  # - Provisionamento:
+  #   - Ansible: provisionamento/ansible.md
+  #   - Terraform: provisionamento/terraform.md
