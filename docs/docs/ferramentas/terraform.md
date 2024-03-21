@@ -1,52 +1,54 @@
 # <img src="../../images/terraform-logo.png" alt="drawing" width="30"/> Terraform
 
-bla bla bla wiskjas sache
+## O que é
 
-bananadas aladas
+É uma ferramenta criada pela HashiCorp utilizada para automatizar o **provisionamento** e **gerenciamento** de recursos de infraestrutura em **nuvem**
 
-##  <img src="../../images/poetry-logo.png" alt="drawing" width="30"/> Poetry
+## Onde usar
 
-Está sendo utilizado o Poetry para criar uma env do Python apenas com os recursos necessários para o uso do mkdocs.
-Após criar e acessar a pasta "docs".
+Em projetos em que se deseja provisionar recursos em nuvem alem de manter o controle de versão desta infra
 
-~~~sh
+## Como é aplicado
 
-poetry init -n --name=iac-para-kubernetes-doc
-poetry add mkdocs
-poetry add pymdown-extensions
-poetry add mkdocs-material
-poetry add Pygments
+É utilizado via linha de comando, atravez do binário "terraform", muitas vezes abreviado (utilizando alias) para "tf".
 
-~~~
 
-## <img src="../../images/mkdocs-logo.png" alt="drawing" width="30"/> Mkdocs
+=== "Comando "terraform plan -out plans""
+    ![](../../images/terraform plan.png)
 
-O mkdocs foi escolhido para essa documentação por ser de fácil edição, por já ser usado em muitos projetos grandes, portanto está se tornando um padrão e pela possibilidade de utilizá-lo no Github Pages.
+=== "Comando "tfp -out plans""
+    ![](../../images/tfp.png)
 
-Para iniciar o mkdocs
+Seus manifestos são escritos em HCL para a descrição dos recursos que se deseja provisionar
 
-~~~sh
+![](../../images/hcl.png)
 
-mkdocs new .
+## Estrutura
 
-~~~
+Um projeto com terraform geralmente é organizado da seguinte maneira:
 
-Para deployar o mkdocs no Github Pages
+![](../../images/terraform-tree.bmp)
 
-~~~sh
+Gerados automaticamente:
 
-mkdocs gh-deploy
+* .terraform
+* .terraform.lock.hcl
+* **terraform.tfstate**
+* terraform.tfstate.backup
 
-~~~
+Criados pelo usuário:
 
----
+* Pasta modules
+* output.tf
+* plans
+* provider.tf
+* terrafile.tf
+* variables.tf
 
-## Referências
+Os arquivos automáticos são referentes a metadados, destacando o terraform.tfstate, que armazena todo o gerenciamento de recursos existentes na nuvem.
 
-Poetry:
+Na pasta "modules" é onde armazenamos os manifestos hcl
 
-[Gerenciando pacotes e ambientes com Poetry](https://www.youtube.com/watch?v=ZOSWdktsKf0&ab_channel=EduardoMendes)
+O arquivo "plans" é opcional, mas recomendado. Através dele existe uma comparação entre o tfstate e os manifestos que desejamos aplicar, e então temos uma visão de recursos novos que serão construidos, do que será destruído e o que será atualizado. Podemos gerá-lo através do argumento "-out" no comando "terraform plan"
 
-MkDocs:
-
-[Documentado projetos com MkDocs](https://www.youtube.com/watch?v=GW6nAJ1NHUQ&ab_channel=EduardoMendes)
+output.tf na raíz do projeto printa a informação desejada durante a execução na tela

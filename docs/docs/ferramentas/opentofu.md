@@ -1,52 +1,11 @@
-# OpenTofu
+#  <img src="../../images/open-tofu-logo.jpg" alt="drawing" width="30"/> OpenTofu
 
-bla bla bla wiskjas sache
+Em agosto de 2023, a Hashicorp mudou a licença do Terraform, a partir da versão 1.6.0 de MPL v2 para BSL v1.1 o que para muitos é algo um tanto ambiguo, com possibilidades até de em algum momento a ferramenta passar a ser paga.
 
-bananadas aladas
+A Linux Foundation após não ser ouvida pela HashiCorp para desfazer a decisão da mudança de licença, fez um fork do projeto na última versão ainda com a antiga licença e chamou inicialmente de OpenTF, mas depois o nome foi trocado para OpenTofu.
 
-##  <img src="../../images/poetry-logo.png" alt="drawing" width="30"/> Poetry
+Esta ferramenta é mantida majoritariamente pela comunidade, com a promessa, inclusive, de se desenvolverem novos recursos, que não o foram anteriormente pela HashiCorp.
 
-Está sendo utilizado o Poetry para criar uma env do Python apenas com os recursos necessários para o uso do mkdocs.
-Após criar e acessar a pasta "docs".
+Existe, neste projeto, uma preocupação em manter a compatibilidade com projetos Terraform.
 
-~~~sh
-
-poetry init -n --name=iac-para-kubernetes-doc
-poetry add mkdocs
-poetry add pymdown-extensions
-poetry add mkdocs-material
-poetry add Pygments
-
-~~~
-
-## <img src="../../images/mkdocs-logo.png" alt="drawing" width="30"/> Mkdocs
-
-O mkdocs foi escolhido para essa documentação por ser de fácil edição, por já ser usado em muitos projetos grandes, portanto está se tornando um padrão e pela possibilidade de utilizá-lo no Github Pages.
-
-Para iniciar o mkdocs
-
-~~~sh
-
-mkdocs new .
-
-~~~
-
-Para deployar o mkdocs no Github Pages
-
-~~~sh
-
-mkdocs gh-deploy
-
-~~~
-
----
-
-## Referências
-
-Poetry:
-
-[Gerenciando pacotes e ambientes com Poetry](https://www.youtube.com/watch?v=ZOSWdktsKf0&ab_channel=EduardoMendes)
-
-MkDocs:
-
-[Documentado projetos com MkDocs](https://www.youtube.com/watch?v=GW6nAJ1NHUQ&ab_channel=EduardoMendes)
+[Para mais detalhes](https://pt.linkedin.com/pulse/opentofu-uma-nova-alternativa-de-c%C3%B3digo-aberto-ao-terraform-garone)

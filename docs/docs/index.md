@@ -41,6 +41,7 @@ A **repetição de processos manuais** pode levar a exaustão que pode levar ao 
 ## Como é aplicado
 
 Através de **ferramentas** específicas que podem ser **mais ou menos especializadas** e que atendem **diferentes necessidades**
+
 Exemplos dessas ferramentas:
 
 * [Ansible](https://www.ansible.com/);
